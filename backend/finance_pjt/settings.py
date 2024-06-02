@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'deposit',
 ]
 
 SITE_ID = 1
@@ -62,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'finance_pjt.urls'
@@ -154,4 +157,9 @@ REST_FRAMEWORK = {
 REST_AUTH = {
     'SESSION_LOGIN': False,
     "REGISTER_SERIALIZER": "accounts.serializers.CustomRegisterSerializer",
+}
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
+    'LOGIN_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
 }
