@@ -41,3 +41,9 @@ def save_deposit_products(request):
                 else:
                     return Response(option_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         return Response("Deposit products saved successfully.", status=status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+def search_deposit_product(request):
+    products = DepositProduct.objects.all()
+    serializer = DepositProductsSerializer(products, many=True)
+    return Response(serializer.data)

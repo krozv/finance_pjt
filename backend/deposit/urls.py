@@ -19,5 +19,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('save', views.save_deposit_products),
+    path('save/', views.save_deposit_products),
+    path('search/', views.search_deposit_product),
 ]
