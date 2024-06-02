@@ -21,3 +21,8 @@ class CustomRegisterSerializer(RegisterSerializer):
         user.email = self.validated_data.get('email', '')
         user.save()
         return user
+    
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'

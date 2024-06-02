@@ -16,8 +16,9 @@ Including another URLconf
 """
 
 from django.urls import path, include
-
+from . import views
 urlpatterns = [
     path('', include('dj_rest_auth.urls')),
-    path('registration/', include('dj_rest_auth.registration.urls')),  # 회원가입을 위해 필요
+    path('registration/', include('dj_rest_auth.registration.urls')),
+    path('<str:tar_username>/profile/', views.user_profile, name='user_profile'),
 ]
