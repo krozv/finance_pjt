@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mx-16">
         <p>home view</p>
     </div>
 </template>
