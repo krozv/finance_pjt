@@ -1,5 +1,6 @@
 <template>
     <v-card
+        color="#D9D9D9"
         :subtitle=item.bank
         :title=item.title
         text="상품설명"    

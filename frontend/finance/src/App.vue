@@ -11,7 +11,7 @@ import Nav from '@/views/Nav.vue'
 
 <style scoped>
 .grad {
-  height: 100vh;
+  height: 300vmin;
   background-image: linear-gradient(#3F6387, #0E151D);
 }
 </style>
