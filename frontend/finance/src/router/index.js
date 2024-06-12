@@ -4,6 +4,8 @@ import Deposit from '@/views/Deposit.vue'
 import Savings from '@/views/Savings.vue'
 import Exchange from '@/views/Exchange.vue'
 import MyPage from '@/views/MyPage.vue'
+import Login from '@/views/Login.vue'
+import Signin from '@/views/Signin.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +34,16 @@ const router = createRouter({
       path: '/mypage',
       name: 'myPage',
       component: MyPage
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: Signin
     },
   ]
 })

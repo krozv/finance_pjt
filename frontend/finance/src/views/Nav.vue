@@ -24,7 +24,12 @@
             환율
         </v-btn>
         <v-spacer></v-spacer>
-        <v-btn 
+        <v-btn v-if="login"
+        @click="moveTo('login')"
+        :class="{ active: activeButton === 'login' }">
+            로그인
+        </v-btn>
+        <v-btn v-else
         @click="moveTo('myPage')"
         :class="{ active: activeButton === 'myPage' }">
             마이페이지
@@ -46,6 +51,9 @@ const moveTo = function (name) {
     activeButton.value = name
     router.push({ name: name })
 }
+
+// login 상태 확인 -> 추후 django와 연결
+const login = ref(true)
 
 </script>
 
