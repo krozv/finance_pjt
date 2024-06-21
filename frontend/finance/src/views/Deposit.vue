@@ -71,7 +71,7 @@ const selection = ref(null)
 
 <style scoped>
 h2 {
-    color: white
+    color: white;
 }
 h2:hover {
     text-decoration: underline;

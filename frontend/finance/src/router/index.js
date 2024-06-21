@@ -6,6 +6,7 @@ import Exchange from '@/views/Exchange.vue'
 import MyPage from '@/views/MyPage.vue'
 import Login from '@/views/Login.vue'
 import Signin from '@/views/Signin.vue'
+import Detail from '@/views/Detail.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,11 @@ const router = createRouter({
       path: '/exchange',
       name: 'exchange',
       component: Exchange
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: Detail,
     },
     {
       path: '/mypage',
