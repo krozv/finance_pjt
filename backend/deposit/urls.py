@@ -22,5 +22,7 @@ urlpatterns = [
     path('save_deposit/', views.save_deposit_products),
     path('save_savings/', views.save_savings_products),
     path('search_deposit/', views.search_deposit_product),
+    path('search_deposit/<int:deposit_pk>/', views.search_deposit_option),
     path('search_savings/', views.search_savings_product),
+    path('search_savings/<int:savings_pk>', views.search_savings_option),
 ]

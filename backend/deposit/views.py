@@ -48,6 +48,13 @@ def search_deposit_product(request):
     serializer = DepositProductsSerializer(products, many=True)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def search_deposit_option(request, deposit_pk):
+    product = DepositProduct.objects.get(pk=deposit_pk)
+    options = DepositOptions.objects.filter(product=product)
+    serializer = DepositOptionsSerializer(options, many=True)
+    return Response(serializer.data)
+
 @api_view(['POST'])
 def save_savings_products(request):
     auth_key = "f5cd05f62e937d51a7e476e4315184e6"
@@ -84,4 +91,12 @@ def save_savings_products(request):
 def search_savings_product(request):
     products = SavingsProduct.objects.all()
     serializer = SavingsProductsSerializer(products, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def search_savings_option(request, savings_pk):
+    product = SavingsProduct.objects.get(pk=savings_pk)
+    options = SavingsOptions.objects.filter(product=product)
+    serializer = SavingsOptionsSerializer(options, many=True)
     return Response(serializer.data)
